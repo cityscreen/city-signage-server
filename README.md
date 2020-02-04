@@ -1,10 +1,10 @@
-# pisignage-server
+# citysignage-server
 
 Server code to manage piSignage players in a LAN or Private Network or to setup your own server!
 
     run npm install command after git pull and before starting the server
 
-## Recommended Server configuration 
+## Recommended Server configuration
 - Intel CPU based VM or server
 - 2GB minimum memory
 - 30GB+ SSD or hard disk
@@ -16,7 +16,7 @@ Server code to manage piSignage players in a LAN or Private Network or to setup 
 1. Issue the command `git pull origin master`
    ***IMPORTANT: If you are upadating from before 24 Nov 2016, after git pull, please change the uri variable in config/env/development.js to 'mongodb://localhost/pisignage-dev' to retain the old data***
 1. Apply your code changes if any
-1. Do "npm install" 
+1. Do "npm install"
 1. Start the pisignage-server and go to url localhost:3000
 1. Enter the username of yours at pisignage.com (not the email ID) (or change under settings, otherwise player license will not be enabled)
 1. Default authentication credentials for player webUI has been changed to pi:pi
@@ -47,37 +47,37 @@ Server code to manage piSignage players in a LAN or Private Network or to setup 
 
 1. Install mongodb - open-source document database
 
-    Refer mongodb install guides to install mongodb. 
+    Refer mongodb install guides to install mongodb.
 
    - Windows: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/
    - Linux: https://docs.mongodb.com/manual/administration/install-on-linux/
-   - Mac OS X: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/ 
-        
+   - Mac OS X: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+
 2. Install node.js and npm - open source server framework
 
    https://nodejs.org/en/download/package-manager/
-         
+
 3. Install ffmpeg - video converter
 
    https://www.ffmpeg.org/download.html
 
-   
+
 4. Install imagemagick - tool for image edit, conversion
 
     https://www.imagemagick.org/script/download.php
-    
+
 5. Install Git -  distributed version control system
 
     https://git-scm.com/downloads
 
 5. Clone this reporsitory and run follwing commands
 
-    - git clone https://github.com/colloqi/pisignage-server 
+    - git clone https://github.com/colloqi/pisignage-server
     - mkdir media
     - mkdir media/_thumbnails
     - cd pisignage-server
     - npm install
-    
+
 6. Currently network port is configured as 3000 in local server. Modify in the file `config/env/development.js` for the port
 
 7. Run node server with `node server.js`
@@ -87,7 +87,7 @@ Server code to manage piSignage players in a LAN or Private Network or to setup 
 9. Do the following configuration before you start   
     - Under settings, configure the username to be same as that of your signin username at pisignage.com (it is **not** your email id)  
     - Download the license files either from email or from pisignage.com, upload them to your local server under settings  
-    - You can upgrade your players directly from your local server 
+    - You can upgrade your players directly from your local server
     - authentication is pi & pi, you can change this under settings
 
 **NOTE:** Please make sure **mongod** process is running and **/data/db** owenership is changed to regular user. If not use, ``` sudo chown -R your-username:user-group /data```
@@ -100,11 +100,11 @@ Server code to manage piSignage players in a LAN or Private Network or to setup 
 2. After player boots, configure admin and media server to your local address and port using one of the below methods  
 
    a. Using the webUI of the player at http://[player IP]:8000/settings
-  
+
    b. Connect Keyboard and press Ctrl-N or F6    
       * Change config and media server to `http://[your server ip]:port` (ex: 192.168.1.30:3000, 10.50.16.110:3000)   
       * Open terminal `ctrl+Alt+ t` and delete any existing _config.json and _settings.json file from `/home/pi/piSignagePro/config` directory      
-   
+
    c. Connect through ssh
       * Edit `/home/pi/piSignagePro/package.json` for admin and media server configuration    
       * delete any existing _config.json and _settings.json file from `/home/pi/piSignagePro/config` directory    
@@ -137,7 +137,7 @@ Server code to manage piSignage players in a LAN or Private Network or to setup 
     - select a layout to show (1,2a,2b,3a,3b,4,4b,2ab)  
     - Enable ticker & set Ticker text  
     - Make it ad playlist with configurable interval timer  
- 
+
 
 ### Points to remember
 
@@ -145,11 +145,11 @@ Server code to manage piSignage players in a LAN or Private Network or to setup 
     https://github.com/dotansimha/angularjs-dropdown-multiselect/pull/23/files instead of bower (for close-on-select to work)  
 
 2. Requires following programs to work  
-    - ffmpeg >= 0.9  (in certain OS, these may have to be compiled since the package does not exist, 
+    - ffmpeg >= 0.9  (in certain OS, these may have to be compiled since the package does not exist,
       please see the issue #9)   
     - ffprobe associated with ffmpeg needed to convert videos    
     - imagemagick  creates thumbnails
-    
+
 3. Two directories are created by the program ../media and ../media/_thumbnails. If these directories are not created server won't work as expected (for e.g. thumbnails won't be created if _thumbnails directory does not exit). In that case create those directories manually.
 
 
@@ -157,5 +157,5 @@ Server code to manage piSignage players in a LAN or Private Network or to setup 
 
 5. Make sure installation under settings page is same as your username (not email) at pisignage.com  
 
-    
+
 ***Please raise an issue for problems or send us email at support@pisignage.com***  
